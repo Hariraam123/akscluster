@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hariraamakscluster 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hariraamakscluster
+  template:
+    metadata:
+      labels:
+        app: hariraamakscluster 
+    spec:
+      containers:
+        - name: hariraamakscluster 
+          image: hariraamcontainerregistry.azurecr.io/hariraamakscluster
+          ports:
+          - containerPort: 8080
